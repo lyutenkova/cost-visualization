@@ -33,7 +33,7 @@ def create_ds_for_drawing():
             continue
 
         expenditure = str(df['title'][i])  # статья расходов потомок
-        cost = int(float(df['cost'][i])) if not np.isnan(df['cost'][i]) else 0  #  сумма
+        cost = int(float(df['cost'][i])) if not np.isnan(df['cost'][i]) else 0
 
         dataset.append([expenditure, parent, cost])
     
@@ -41,9 +41,9 @@ def create_ds_for_drawing():
 
 
 def draw_animate_chart():
-    df = create_ds_for_drawing()  #  готовим датасет для рисования диаграммы
+    df = create_ds_for_drawing()
     levels = ['child', 'parent']  #  уровни вложенности (children, статья)
-    value_column = 'cost'  #  по какому столбцу считать
+    value_column = 'cost'
     
     df_all_trees = pd.DataFrame(columns=['id', 'parent', 'value', 'color'])
 
